@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="header">
+    <h1 class="title">Flight Edit</h1>
+  </div>
+
+  <div class="content">
+
+    <p class="success" *ngIf="success$ | async">
+      Successfully saved!
+    </p>
+
+    <p class="warning" *ngIf="error$ | async">
+      {{ error$ | async }}
+    </p>
+
+    <p>Id: {{id}}</p>
+    <p>ShowDetails: {{showDetails}}</p>
+    <pre>{{ flight$ | async | json }}</pre>
+    
+    <button (click)="save()" class="btn btn-default">Save</button>
+  </div>
+</div>
+
